@@ -1,0 +1,40 @@
+html{
+    background-color: rgb(33, 0, 53);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2{
+        font-size: 2.5rem;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        margin: 20px 0;
+        color: white;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 600px;
+            min-width: 300px;
+            max-height: 400px;
+
+
+        }
+        small{
+            text-align: center;
+            padding: 15px 0;
+            color: rgb(255, 255, 255);
+        }
+    }
+    p{
+        width: 600px;
+        margin: 10px 0;
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+    }
+}
