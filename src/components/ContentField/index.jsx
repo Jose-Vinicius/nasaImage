@@ -1,26 +1,21 @@
 import { useDateContext } from "../../context/DateContext";
 import { Button } from '../Button/';
-import YouTube from 'react-youtube';
+import { YoutubeEmbed } from "../EmbedPlayer";
 
 import './style.scss';
 
 export function ContentField(){
-    const {image, title, author, text,  hiddenDescription, setHiddenDescription, mediaType, video} = useDateContext();
-    const optsYoutube = {
-        height: '390',
-        width: '640',
-        playerVars: {
-          autoplay: 1,
-        },
-    }
+    const {image, title, author, text,  hiddenDescription, setHiddenDescription, mediaType, videoID} = useDateContext();
+    
     return(
         <main>
             <h2>{title}</h2>
             <div>
                 {
-                    mediaType === 'image' || mediaType !== '' ?
+                    mediaType === 'image' || mediaType === undefined ?
                     <img src={image} alt={title}/> :
-                    <YouTube videoId={video} opts={optsYoutube}/>
+                    <YoutubeEmbed videoID={videoID}/>
+
                 }
                 <small>{author}</small>
             </div>

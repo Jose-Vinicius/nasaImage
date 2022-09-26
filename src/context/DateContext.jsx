@@ -24,7 +24,7 @@ export const DateProvider  = ({children}) => {
     const [data, setData] = useState('')
     const [hiddenDescription, setHiddenDescription] = useState(false)
     const [mediaType, setMediaType] = useState('')
-    const [video, setVideo] = useState('')
+    const [videoID, setVideoID] = useState('')
 
     return(
         <DateContext.Provider
@@ -37,7 +37,7 @@ export const DateProvider  = ({children}) => {
                 data, setData,
                 hiddenDescription, setHiddenDescription,
                 mediaType, setMediaType,
-                video, setVideo
+                videoID, setVideoID
             }}
         >
             {children}
@@ -55,7 +55,7 @@ export const useDateContext = () => {
         data, setData,
         hiddenDescription, setHiddenDescription,
         mediaType, setMediaType,
-        video, setVideo
+        videoID, setVideoID
         
     } = useContext(DateContext);
 
@@ -87,7 +87,7 @@ export const useDateContext = () => {
         setText(data.explanation)
         setTitle(data.title)
         setMediaType(data.media_type)
-        setVideo(() => {
+        setVideoID(() => {
             if(mediaType === 'video'){
                 catchYoutubeId(data.url)
             }
@@ -105,6 +105,6 @@ export const useDateContext = () => {
         hiddenDescription,
         setHiddenDescription,
         mediaType,
-        video
+        videoID
     }
 }
