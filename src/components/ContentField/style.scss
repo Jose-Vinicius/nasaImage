@@ -1,5 +1,7 @@
 html{
-    background-color: rgb(33, 0, 53);
+    background-image: url('../../../public/star-background.jpg');
+    background-size: cover;
+    margin: 20px 0;
 }
 main{
     display: flex;
@@ -30,7 +32,7 @@ main{
         }
     }
     p{
-        width: 600px;
+        width: 800px;
         margin: 10px 0;
         font-size: 1rem;
         font-weight: 400;
