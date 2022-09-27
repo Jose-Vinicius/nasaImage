@@ -21,11 +21,11 @@ export function ContentField(){
                 }
                 <small>{author}</small>
             </div>
-            <Button
+            {image && <Button
                 eventClick={() => setHiddenDescription(!hiddenDescription)}
             >
                 <a href="#description--text">{hiddenDescription ? 'Esconder descrição' : 'Mostrar descrição'}</a>
-            </Button>
+            </Button>}
             {hiddenDescription && <p id="description--text">{text}</p>}
         </main>
     )

@@ -1,20 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { getDate } from "../components/GetDate";
 
 export const DateContext = createContext();
 DateContext.displayName = "DateContext";
 
 export const DateProvider  = ({children}) => {
-
-    function getDate(){
-        const newDate = new Date()
-        let day = newDate.getDate();
-        let mounth = newDate.getMonth()+1;
-        let year = newDate.getFullYear();
-
-        return(
-            `${year}-${mounth < 10 ? '0'+mounth : mounth}-${day <= 10 ? '0'+day : day}`
-        )
-    }
    
     const [date, setDate] = useState(getDate());
     const [image, setImage] = useState('');
@@ -60,19 +50,22 @@ export const useDateContext = () => {
     } = useContext(DateContext);
 
     const urlAPI = 'https://api.nasa.gov/planetary/apod?';
-    const APIkey = 'bMplXeQVtXuMG56JMPr3FatQIL13raAijCIAJNg7';
+    const APIkey = import.meta.env.VITE_APOD_KEY
 
+    //Fazer a conexão e pegar os dados da API Apod da Nasa
     async function getData(date){
         const response = await fetch(`${urlAPI}api_key=${APIkey}&date=${date}`)
         const Data = await response.json()
         setData(Data)
     }
 
+    //Prevenir evento padrão de envio do formulario e enviar a data solicitada
     function handleSubmit(event){
         event.preventDefault();
         getData(date);
     }
 
+    //Pegar o ID do video do youtube
     function catchYoutubeId(videoURL){
         let videoID
         if(videoURL){
@@ -93,15 +86,13 @@ export const useDateContext = () => {
     },[data])
 
     return {
-        date,
-        setDate,
+        date,setDate,
         handleSubmit,
         image,
         title,
         text,
-        author,
-        hiddenDescription,
-        setHiddenDescription,
+        author, 
+        hiddenDescription, setHiddenDescription,
         mediaType,
         videoUrlID
     }
