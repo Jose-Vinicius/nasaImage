@@ -5,7 +5,10 @@ export function getDate(){
     let mounth = newDate.getMonth()+1;
     let year = newDate.getFullYear();
 
+    const mounthFormated = mounth < 10 ? '0'+mounth : mounth
+    const dayFormated = day <= 10 ? '0'+day : day
+
     return(
-        `${year}-${mounth < 10 ? '0'+mounth : mounth}-${day <= 10 ? '0'+day : day}`
+        `${year}-${mounthFormated}-${dayFormated}`
     )
 }

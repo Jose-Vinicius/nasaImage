@@ -1,6 +1,8 @@
 import { useDateContext } from "../../context/DateContext";
 import { Button } from '../Button/';
 import { YoutubeEmbed } from "../EmbedPlayer";
+import { ErrorScreen } from "../ErrorScreen";
+import { getDate } from "../GetDate";
 
 import './style.scss';
 
@@ -13,10 +15,12 @@ export function ContentField(){
         hiddenDescription, 
         setHiddenDescription, 
         mediaType, 
-        videoUrlID
+        videoUrlID,
+        date
     } = useDateContext();
     
     return(
+       date <= getDate() ? 
         <main>
             <h2>{title}</h2>
             <div>
@@ -32,5 +36,6 @@ export function ContentField(){
             </Button>}
             {hiddenDescription && <p id="description--text">{text}</p>}
         </main>
+        : <ErrorScreen />
     )
 }

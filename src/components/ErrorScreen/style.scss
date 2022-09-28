@@ -1,0 +1,26 @@
+.error-screen{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p{
+        font-size: 2.5rem;
+        font-weight: bold;
+        font-family: sans-serif;
+        text-align: center;
+    }
+    div{
+        background-color: rgba(63, 63, 63, 0.808);
+        width: 400px;
+        height: 400px;
+        text-align: center;
+        align-items: center;
+        border-radius: 20px;
+
+        
+        img{
+            margin-top: 30px;
+            width: 200px;
+        }
+    }
+}
