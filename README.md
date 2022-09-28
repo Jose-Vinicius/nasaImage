@@ -12,8 +12,8 @@ Criar uma aplicação onde consumo a API [APOD](https://api.nasa.gov/) da Nasa, 
  - [x] Exibição do conteúdo do dia.
 
 ## ✏️ Resultado final
-![enter image description here](f)
-[Resultado final](h)
+![Resultado final](./public/result-nasa-image.png)
+[Resultado final](https://nasa-image-apod.vercel.app/)
 
 ## Licença
 
