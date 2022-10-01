@@ -15,6 +15,7 @@ export const DateProvider  = ({children}) => {
     const [hiddenDescription, setHiddenDescription] = useState(false)
     const [mediaType, setMediaType] = useState('')
     const [videoUrlID, setVideoUrlID] = useState('')
+    const [hdImage, setHdImage] = useState('');
 
     return(
         <DateContext.Provider
@@ -27,7 +28,8 @@ export const DateProvider  = ({children}) => {
                 data, setData,
                 hiddenDescription, setHiddenDescription,
                 mediaType, setMediaType,
-                videoUrlID, setVideoUrlID
+                videoUrlID, setVideoUrlID,
+                hdImage, setHdImage
             }}
         >
             {children}
@@ -45,7 +47,9 @@ export const useDateContext = () => {
         data, setData,
         hiddenDescription, setHiddenDescription,
         mediaType, setMediaType,
-        videoUrlID, setVideoUrlID
+        videoUrlID, setVideoUrlID,
+        hdImage, setHdImage
+
         
     } = useContext(DateContext);
 
@@ -76,6 +80,7 @@ export const useDateContext = () => {
     
     useEffect(() => {
         setImage(data.url)
+        setHdImage(data.hdurl)
         setAuthor(data.copyright)
         setText(data.explanation)
         setTitle(data.title)
@@ -94,6 +99,7 @@ export const useDateContext = () => {
         author, 
         hiddenDescription, setHiddenDescription,
         mediaType,
-        videoUrlID
+        videoUrlID,
+        hdImage,
     }
 }

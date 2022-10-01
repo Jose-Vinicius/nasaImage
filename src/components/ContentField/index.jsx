@@ -1,5 +1,6 @@
 import { useDateContext } from "../../context/DateContext";
 import { Button } from '../Button/';
+
 import { YoutubeEmbed } from "../EmbedPlayer";
 import { ErrorScreen } from "../ErrorScreen";
 import { getDate } from "../GetDate";
@@ -16,7 +17,8 @@ export function ContentField(){
         setHiddenDescription, 
         mediaType, 
         videoUrlID,
-        date
+        date,
+        hdImage
     } = useDateContext();
     
     return(
@@ -35,6 +37,7 @@ export function ContentField(){
                 <a href="#description--text">{hiddenDescription ? 'Esconder descrição' : 'Mostrar descrição'}</a>
             </Button>}
             {hiddenDescription && <p id="description--text">{text}</p>}
+           { mediaType === 'image' ? <a href={hdImage} target="__blank">Full image view</a> : ''}
         </main>
         : <ErrorScreen />
     )
