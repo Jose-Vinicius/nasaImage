@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { getDate } from "../components/GetDate";
 
+
 export const DateContext = createContext();
 DateContext.displayName = "DateContext";
 
@@ -53,22 +54,6 @@ export const useDateContext = () => {
         
     } = useContext(DateContext);
 
-    const urlAPI = 'https://api.nasa.gov/planetary/apod?';
-    const APIkey = import.meta.env.VITE_APOD_KEY
-
-    //Fazer a conexão e pegar os dados da API Apod da Nasa
-    async function getData(date){
-        const response = await fetch(`${urlAPI}api_key=${APIkey}&date=${date}`)
-        const Data = await response.json()
-        setData(Data)
-    }
-
-    //Prevenir evento padrão de envio do formulario e enviar a data solicitada
-    function handleSubmit(event){
-        event.preventDefault();
-        getData(date);
-    }
-
     //Pegar o ID do video do youtube
     function catchYoutubeId(videoURL){
         let videoID
@@ -92,7 +77,7 @@ export const useDateContext = () => {
 
     return {
         date,setDate,
-        handleSubmit,
+        setData,
         image,
         title,
         text,

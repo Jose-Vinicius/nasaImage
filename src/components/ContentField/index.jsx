@@ -37,7 +37,14 @@ export function ContentField(){
                 <a href="#description--text">{hiddenDescription ? 'Esconder descrição' : 'Mostrar descrição'}</a>
             </Button>}
             {hiddenDescription && <p id="description--text">{text}</p>}
-           { mediaType === 'image' ? <a href={hdImage} target="__blank">Full image view</a> : ''}
+           { mediaType === 'image' ? 
+           <Button
+                width='200px'
+                height='50px'
+                fontSize='1.3rem'
+           >
+                <a href={hdImage} target="__blank">Imagem completa</a>
+            </Button> : ''}
         </main>
         : <ErrorScreen />
     )
