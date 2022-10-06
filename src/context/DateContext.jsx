@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { getDate } from "../components/GetDate";
+import { catchYoutubeId } from "../components/catchYoutubeID";
 
 
 export const DateContext = createContext();
@@ -54,14 +55,7 @@ export const useDateContext = () => {
         
     } = useContext(DateContext);
 
-    //Pegar o ID do video do youtube
-    function catchYoutubeId(videoURL){
-        let videoID
-        if(videoURL){
-            videoID = videoURL.split("embed/")[1].split("?")[0];
-            return videoID
-        }
-    }
+    
     
     useEffect(() => {
         setImage(data.url)
