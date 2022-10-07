@@ -2,7 +2,7 @@ html{
     background-image: url('/star-background.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto auto;
 }
 main{
     display: flex;
@@ -38,21 +38,46 @@ main{
         color: white;
     }
 }
-@media only screen and (max-width: 600px) {
-    main{
-        h2{
-            font-size: 1.5rem;
-            text-align: center;
-        }
-        div{
-            img{
-                width: 80vw;
+@media only screen and (max-width: 599px) {
+    html{
+        background-size: auto 250vh;
+   
+        main{
+            h2{
+                font-size: 1.5rem;
+                text-align: center;
             }
+            div{
+                img{
+                    width: 80vw;
+                }
+            }
+            P{
+                width: 80vw;
+                text-align: center;
         }
-        P{
-            width: 80vw;
-            text-align: center;
         }
     }
     
+}
+
+@media only screen and (min-width: 600px){
+    html{
+        background-size: auto 250vh;
+        main{
+            h2{
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            div{
+                img{
+                    width: 80vw;
+                }
+            }
+            P{
+                width: 80vw;
+                text-align: center;
+            }
+        }
+    }
 }
