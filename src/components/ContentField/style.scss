@@ -21,6 +21,8 @@ main{
         flex-direction: column;
         img{
             min-width: 200px;
+            max-width: 600px;
+            max-height: 500px;
             width: 600px;
         }
         small{
