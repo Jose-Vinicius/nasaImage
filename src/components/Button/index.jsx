@@ -1,7 +1,5 @@
 import './style.scss'
 
-
-
 export function Button({children, eventClick, width, height, fontSize}){
     const style = {
         width: width,

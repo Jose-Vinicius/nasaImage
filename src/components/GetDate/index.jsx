@@ -12,3 +12,4 @@ export function getDate(){
         `${year}-${mounthFormated}-${dayFormated}`
     )
 }
+
