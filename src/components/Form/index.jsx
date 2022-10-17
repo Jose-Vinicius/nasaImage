@@ -21,7 +21,7 @@ export function Form(){
         <form onSubmit={handleSubmit}>
             <InputField />
             <Button>
-                Buscar imagem
+                Buscar
             </Button>
         </form>
     )

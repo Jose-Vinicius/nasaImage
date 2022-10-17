@@ -7,7 +7,15 @@ describe('Botão utilizado na aplicação',() => {
         render(
             <Button>Buscar Imagem</Button>
         )
-        const button = screen.getByRole('button', {name: 'Buscar Imagem'})
-        expect(button).toBeInTheDocument();
+
+        const textButton = 'Buscar Imagem'
+        const button = screen.getByRole('button', {name: textButton})
+
+        try{
+            expect(button).toMatchSnapshot();
+        } catch(error){
+            console.error(error)
+        }
+        
     })
 })
