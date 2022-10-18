@@ -5,7 +5,7 @@ export function ErrorScreen(){
         <main className='error-screen'>
             <p>Data superior a atual</p>
             <div>
-                <img src="/not-found.png"  alt="Not Found"/>
+                <img src="/not-found.jpg"  alt="Not Found"/>
             </div>
         </main>
     )

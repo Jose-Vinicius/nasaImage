@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`Botão utilizado na aplicação > Botão com texto correto 1`] = `
+<button>
+  Buscar Imagem
+</button>
+`;
